@@ -1,4 +1,2 @@
 def test():
-    my_dict = {
-        'name': 'Joe'
-    }
+    my_dict = {'name': 'Joe'}
