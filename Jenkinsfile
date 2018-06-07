@@ -1,11 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'python:3.6'
+      args '-u root'
+    }
+  }
 
   stages {
     stage('Test Format') {
       steps {
-        echo 'Testing YAPF format...'
-        sh 'yapf --diff -r .'
+        sh 'make jenkins-test-yapf-format'
       }
     }
   }
