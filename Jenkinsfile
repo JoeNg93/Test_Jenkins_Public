@@ -7,8 +7,9 @@ pipeline {
   }
 
   stages {
-    stage('Test Format') {
+    stage('Check Code Format') {
       steps {
+        echo "Check YAPF format..."
         sh 'make jenkins-test-yapf-format'
       }
     }
